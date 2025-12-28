@@ -4,12 +4,12 @@ require('dotenv').config();
 const express = require ('express');
 
 const UserRouter = require('./routes/UserRouter.js');
+const TodoRouter = require('./routes/TodoRouter.js');
 const app = express()
 
 const port = process.env.PORT || 3000;
 
 // Database models
-const { UserModel, TodoModel } = require('./config/db.js');
 const mongoose = require('mongoose');
 const MONGO_URI = process.env.MONGO_URI;
 
@@ -18,6 +18,8 @@ app.use(express.json());
 
 // User routes
 app.use('/user', UserRouter);
+// Todo routes
+app.use('/todo', TodoRouter);
 
 // Connect to MongoDB
 async function connectDB(){

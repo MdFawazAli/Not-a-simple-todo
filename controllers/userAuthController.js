@@ -26,10 +26,10 @@ async function Signup(req, res) {
     }
 
     // Extract validated data
-    const { email, password, name } = req.body;
+    const { email, password, name } = ParseDataWithSuccess.data;
 
     // Hash the password
-    const hashedPassword = await bcrypt.hash(password, 5);
+    const hashedPassword = await bcrypt.hash(password, 10);
 
     // Create new user
     try {
@@ -45,7 +45,7 @@ async function Signup(req, res) {
         // Handle duplicate user error
     } catch (e) {
         if (e.code === 11000) {
-            return res.json({
+            return res.status(409).json({
                 msg: "User already exists"
             });
         }

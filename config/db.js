@@ -16,12 +16,22 @@ const TodoSchema = new schema({
     completed: {type: Boolean, default: false}
 })
 
+// Grocery Schema
+const GrocerySchema = new schema({
+    userId: ObjectId,
+    item: String,
+    quantity: Number,
+    purchased: {type: Boolean, default: false}
+})
+
 // Models
 const UserModel = mongoose.model('Users', UserSchema);
 const TodoModel = mongoose.model('Todos', TodoSchema);
+const GroceryModel = mongoose.model('Groceries', GrocerySchema);
 
 // Export models
 module.exports = {
     UserModel,
-    TodoModel
+    TodoModel,
+    GroceryModel
 }
