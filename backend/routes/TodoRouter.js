@@ -2,7 +2,6 @@ const express = require('express');
 const TodoRouter = express.Router();
 const { getAllTodos, createTodo, updateTodo, deleteTodo } = require('../controllers/todoController.js');
 const authMiddleware = require('../middleware/authMiddleware.js');
-const { de } = require('zod/v4/locales');
 
 // Middleware to protect routes
 TodoRouter.use(authMiddleware);

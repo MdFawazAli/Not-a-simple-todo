@@ -1,5 +1,5 @@
-const { Router } = require('express');
-const GroceryRouter = Router();
+const express = require('express');
+const GroceryRouter = express.Router();
 const { getAllGroceries, createGrocery, updateGrocery, deleteGrocery } = require('../controllers/groceryController.js');
 const authMiddleware = require('../middleware/authMiddleware.js');
 

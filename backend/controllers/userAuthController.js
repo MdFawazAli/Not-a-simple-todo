@@ -19,7 +19,7 @@ async function Signup(req, res) {
 
     // Handle validation errors
     if (!ParseDataWithSuccess.success) {
-        return res.json({
+        return res.status(400).json({
             msg: "Incorrect Format",
             error: ParseDataWithSuccess.error
         })
@@ -65,7 +65,7 @@ async function login(req, res) {
 
     // Handle user not found
     if (!user) {
-        return res.json({
+        return res.status(401).json({
             msg: "Invalid credentials"
         })
     }
