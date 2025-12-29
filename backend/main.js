@@ -5,6 +5,7 @@ const express = require ('express');
 
 const UserRouter = require('./routes/UserRouter.js');
 const TodoRouter = require('./routes/TodoRouter.js');
+const GroceryRouter = require('./routes/GroceryRouter.js');
 const app = express()
 
 const port = process.env.PORT || 3000;
@@ -20,6 +21,8 @@ app.use(express.json());
 app.use('/user', UserRouter);
 // Todo routes
 app.use('/todo', TodoRouter);
+// Grocery routes
+app.use('/grocery', GroceryRouter);
 
 // Connect to MongoDB
 async function connectDB(){
