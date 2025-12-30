@@ -96,9 +96,7 @@ async function updateTodo(req, res) {
         if (!updatedTodo) {
             return res.status(404).json({ msg: "Todo not found" });
         }
-        res.json({
-            msg: "Todo updated successfully"
-        });
+        res.json(updatedTodo);
     } catch (error) {
         res.status(500).json({
             msg: "Error updating todo",

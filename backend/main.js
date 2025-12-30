@@ -2,6 +2,7 @@
 require('dotenv').config();
 
 const express = require ('express');
+const cors = require('cors');
 
 const UserRouter = require('./routes/UserRouter.js');
 const TodoRouter = require('./routes/TodoRouter.js');
@@ -17,6 +18,9 @@ const MONGO_URI = process.env.MONGO_URI;
 // Middleware to parse JSON bodies
 app.use(express.json());
 
+// Enable CORS
+app.use(cors());
+
 // Rate limiting for auth routes
 const rateLimit = require('express-rate-limit');
 
@@ -28,14 +32,14 @@ const authLimiter = rateLimit({
     legacyHeaders: false,
 });
 
-app.use('/user', authLimiter);
+app.use('/api/user', authLimiter);
 
 // User routes
-app.use('/user', UserRouter);
+app.use('/api/user', UserRouter);
 // Todo routes
-app.use('/todo', TodoRouter);
+app.use('/api/todo', TodoRouter);
 // Grocery routes
-app.use('/grocery', GroceryRouter);
+app.use('/api/grocery', GroceryRouter);
 
 // Connect to MongoDB
 async function connectDB(){
