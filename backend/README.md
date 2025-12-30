@@ -9,6 +9,7 @@ A Node.js backend for a Todo and Grocery management application with user authen
 - CRUD operations for Groceries (item, quantity, purchased status)
 - Secure password hashing with bcrypt
 - Input validation using Zod
+- Rate limiting on authentication routes to prevent brute-force attacks
 - MongoDB for data storage
 
 ## Installation
@@ -100,6 +101,7 @@ Authorization: Bearer <your_jwt_token>
 - `jsonwebtoken`: JWT handling
 - `zod`: Schema validation
 - `dotenv`: Environment variable management
+- `express-rate-limit`: Rate limiting for API endpoints
 
 ## Scripts
 - `npm start`: Start the server
