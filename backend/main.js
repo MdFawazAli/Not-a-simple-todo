@@ -25,7 +25,7 @@ app.use(cors());
 const rateLimit = require('express-rate-limit');
 
 const authLimiter = rateLimit({
-    windowMs: 15 * 60 * 1000, // 15 minutes
+    windowMs: 15 * 60 * 1000, // 15 minute
     max: 5, // Limit each IP to 5 requests per windowMs
     message: 'Too many requests, please try again later.',
     standardHeaders: true,

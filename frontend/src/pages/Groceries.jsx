@@ -29,9 +29,10 @@ const Groceries = () => {
   const addGrocery = async () => {
     if (!newGrocery.trim()) return;
     try {
-      const response = await axiosInstance.post('/grocery/create', { item: newGrocery, quantity: 1 });
+      const response = await axiosInstance.post('/grocery/create', { item: newGrocery, quantity: newQuantity });
       setGroceries([...groceries, response.data.grocery]);
       setNewGrocery('');
+      setNewQuantity(1);
     } catch (error) {
       console.error('Error adding grocery:', error);
     }
@@ -97,6 +98,12 @@ const Groceries = () => {
           placeholder="Add a new grocery item"
           className="w-full px-3 py-2 border rounded-lg mb-2"
         />
+        <div className="flex items-center mb-2">
+          <label className="mr-4">Quantity:</label>
+          <button onClick={() => setNewQuantity(q => Math.max(1, q - 1))} className="px-2 py-1 bg-gray-300 rounded">-</button>
+          <span className="mx-2">{newQuantity}</span>
+          <button onClick={() => setNewQuantity(q => q + 1)} className="px-2 py-1 bg-gray-300 rounded">+</button>
+        </div>
         <button
           onClick={addGrocery}
           className="w-full bg-green-500 text-white py-2 rounded-lg hover:bg-green-600"
