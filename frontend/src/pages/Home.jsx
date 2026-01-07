@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react';
 import axiosInstance from '../api/axiosInstance.js';
+import Loader from '../components/loader.jsx';
 
 const Home = () => {
   const [todos, setTodos] = useState([]);
   const [newTodo, setNewTodo] = useState('');
   const [editingId, setEditingId] = useState(null);
   const [editTitle, setEditTitle] = useState('');
-  const [loading, setLoading] = useState(true);
 
   // Fetch todos on load
   useEffect(() => {
@@ -73,8 +73,6 @@ const Home = () => {
       console.error('Error deleting todo:', error);
     }
   };
-
-  if (loading) return <div className="text-center mt-10">Loading...</div>;
 
   return (
     <div className="max-w-2xl mx-auto mt-10 p-6 bg-white rounded-lg shadow-md">

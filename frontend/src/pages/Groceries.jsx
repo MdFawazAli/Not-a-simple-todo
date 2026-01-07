@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import axiosInstance from '../api/axiosInstance.js';
+import Loader from '../components/loader.jsx';
 
 const Groceries = () => {
   const [groceries, setGroceries] = useState([]);
@@ -8,7 +9,6 @@ const Groceries = () => {
   const [editingId, setEditingId] = useState(null);
   const [editItem, setEditItem] = useState('');
   const [editQuantity, setEditQuantity] = useState(1);
-  const [loading, setLoading] = useState(true);
 
   // Fetch groceries on load
   useEffect(() => {
@@ -82,8 +82,6 @@ const Groceries = () => {
 
   const increaseQuantity = () => setEditQuantity(prev => prev + 1);
   const decreaseQuantity = () => setEditQuantity(prev => Math.max(1, prev - 1));
-
-  if (loading) return <div className="text-center mt-10">Loading...</div>;
 
   return (
     <div className="max-w-2xl mx-auto mt-10 p-6 bg-white rounded-lg shadow-md">
