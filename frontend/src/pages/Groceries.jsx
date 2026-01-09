@@ -84,7 +84,7 @@ const Groceries = () => {
   const decreaseQuantity = () => setEditQuantity(prev => Math.max(1, prev - 1));
 
   return (
-    <div className="max-w-2xl mx-auto mt-10 p-6 mb-5 bg-linear-to-r from-blue-100 via-purple-100 to-white rounded-2xl shadow-2xl border border-blue-200 transition-colors duration-300">
+    <div className="max-w-2xl mx-2 md:mx-auto mt-10 p-6 mb-5 bg-linear-to-r from-blue-100 via-purple-100 to-white rounded-2xl shadow-2xl border border-blue-200 transition-colors duration-300">
       <h1 className="text-3xl font-extrabold mb-4 pb-2 text-transparent bg-clip-text bg-linear-to-r from-blue-500 to-purple-500">My Groceries</h1>
       {/* Add Grocery Form */}
       <div className="mb-6">
