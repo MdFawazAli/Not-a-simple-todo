@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Home from './pages/Home.jsx';
-import AuthPage from './pages/AuthPage.jsx';
+import AuthPageWithFooter from './pages/AuthPage.jsx';
 import { AnimatePresence, motion } from 'framer-motion';
 import Groceries from './pages/Groceries.jsx';
 import About from './pages/About.jsx';
@@ -39,7 +39,7 @@ function AnimatedRoutes() {
               exit={{ opacity: 0, x: -40 }}
               transition={{ duration: 0.5 }}
             >
-              <AuthPage />
+              <AuthPageWithFooter />
             </motion.div>
           }
         />
@@ -53,7 +53,7 @@ function AnimatedRoutes() {
               exit={{ opacity: 0, x: -40 }}
               transition={{ duration: 0.5 }}
             >
-              <AuthPage />
+              <AuthPageWithFooter />
             </motion.div>
           }
         />
