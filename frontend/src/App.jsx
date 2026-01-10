@@ -8,6 +8,7 @@ import About from './pages/About.jsx';
 import ProtectedRoute from './components/protectedRoute.jsx';
 import Navbar from './components/navbar.jsx';
 import Loader from './components/loader.jsx';
+import CustomCursor from "./components/customCursor.jsx";
 
 function AnimatedRoutes() {
   const location = useLocation();
@@ -103,6 +104,7 @@ function App() {
 
   return (
     <Router>
+      <CustomCursor />
       <Navbar />
       <AnimatedRoutes />
     </Router>

@@ -37,7 +37,7 @@ const Navbar = () => {
 
   return (
     <React.Fragment>
-      <nav className="backdrop-blur-md bg-linear-to-r from-blue-800/80 via-blue-600/70 to-purple-700/80 shadow-lg shadow-blue-900/30 text-white p-3 z-40 rounded-b-2xl border-b border-white/10">
+      <nav className="sticky top-0 z-50 backdrop-blur-md bg-linear-to-r from-blue-800/80 via-blue-600/70 to-purple-700/80 shadow-lg shadow-blue-900/30 text-white p-3 rounded-b-2xl border-b border-white/10">
         <div className="container mx-auto flex justify-between items-center px-2 sm:px-6 py-1">
           {/* Logo always visible */}
           <Link to="/" className="block"><img src={logo} alt="Logo" className="h-11 w-11 mr-3 drop-shadow-lg rounded-full border-2 border-white/30 bg-white/10 p-1" /></Link>
@@ -85,10 +85,10 @@ const Navbar = () => {
         style={{ zIndex: 52 }}
       >
         <div className="flex items-center justify-between p-4 border-b border-blue-200/40">
-          <span className="text-lg font-bold text-black tracking-wide">Menu</span>
+          <span className="text-3xl font-bold text-black tracking-wide">Menu</span>
           <button onClick={() => setSidebarOpen(false)} className="hover:text-red-500 transition cursor-pointer"><FaTimes size={22} /></button>
         </div>
-        <nav className="flex-1 flex flex-col gap-2 p-4 text-black">
+        <nav className="flex-1 flex flex-col gap-2 p-4 text-black text-2xl">
           <NavLink to="/" className={linkClasses} onClick={() => setSidebarOpen(false)}><FaHome /> Home</NavLink>
           {isAuthenticated && (
             <NavLink to="/groceries" className={linkClasses} onClick={() => setSidebarOpen(false)}><MdLocalGroceryStore /> Groceries</NavLink>
@@ -100,7 +100,7 @@ const Navbar = () => {
           <div className="p-4 border-t border-blue-200/40 mt-auto">
             <button
               onClick={handleLogoutClick}
-              className="flex items-center gap-2 w-full relative bg-linear-to-r from-red-500 via-pink-500 to-purple-500 hover:from-red-600 hover:to-purple-600 text-white font-bold py-2 px-4 rounded hover:ring-2 hover:ring-pink-400/60 transition-all duration-200 cursor-pointer overflow-hidden group"
+              className="flex items-center gap-2 w-full text-2xl relative bg-linear-to-r from-red-500 via-pink-500 to-purple-500 hover:from-red-600 hover:to-purple-600 text-white font-bold py-2 px-4 rounded hover:ring-2 hover:ring-pink-400/60 transition-all duration-200 cursor-pointer overflow-hidden group"
               style={{ zIndex: 1 }}
             >
               <span className="absolute inset-0 bg-linear-to-r from-pink-400 via-purple-400 to-red-400 opacity-0 group-hover:opacity-30 blur-lg transition-all duration-300 pointer-events-none animate-pulse" style={{zIndex:0}}></span>

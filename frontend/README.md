@@ -1,16 +1,73 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Not a Simple Todo App Frontend
 
-Currently, two official plugins are available:
+This is the frontend for the Not a Simple Todo App, built with React, Vite, and Tailwind CSS.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+- Modern React (with hooks and context)
+- Authentication and protected routes
+- Todo and Grocery management
+- Responsive design with Tailwind CSS
+- Animations with Framer Motion and GSAP
 
-## React Compiler
+## Getting Started
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Prerequisites
+- Node.js (v18 or higher recommended)
+- npm
 
-## Expanding the ESLint configuration
+### Installation
+1. Navigate to the `frontend` directory:
+	```sh
+	cd frontend
+	```
+2. Install dependencies:
+	```sh
+	npm install
+	```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Running the App
+To start the development server:
+```sh
+npm run dev
+```
+The app will be available at `http://localhost:5173` by default.
+
+### Building for Production
+To build the app for production:
+```sh
+npm run build
+```
+The output will be in the `dist` folder.
+
+### Preview Production Build
+To preview the production build locally:
+```sh
+npm run preview
+```
+
+## Environment Variables
+If your app needs to connect to a backend API, create a `.env` file in the `frontend` directory and add your variables, for example:
+```
+VITE_API_URL=http://localhost:3000
+```
+
+## Linting
+To run ESLint:
+```sh
+npm run lint
+```
+
+## Deployment
+You can deploy the contents of the `dist` folder to any static hosting service (Vercel, Netlify, GitHub Pages, etc.).
+
+## Project Structure
+- `src/` - Main source code
+- `src/pages/` - Page components (Home, Auth, Groceries, About)
+- `src/components/` - Reusable UI components
+- `src/context/` - React context (e.g., authentication)
+- `src/api/` - Axios instance for API calls
+- `src/utils/` - Utility functions
+
+---
+For backend setup, see the `../backend/README.md` file.

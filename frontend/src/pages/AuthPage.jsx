@@ -122,7 +122,7 @@ function AuthPage() {
                 <div className="mt-4 text-center">
                   <span>Not registered? </span>
                   <button
-                    className="text-blue-600 hover:underline focus:outline-none font-semibold"
+                    className="text-blue-600 hover:underline cursor-pointer focus:outline-none font-semibold"
                     type="button"
                     onClick={() => handleSwitch(false)}
                   >
@@ -185,7 +185,7 @@ function AuthPage() {
                 <div className="text-center">
                   <span>Already have an account? </span>
                   <button
-                    className="text-purple-600 hover:underline focus:outline-none font-semibold"
+                    className="text-purple-600 cursor-pointer hover:underline focus:outline-none font-semibold"
                     type="button"
                     onClick={() => handleSwitch(true)}
                   >
